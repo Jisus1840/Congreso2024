@@ -1,107 +1,42 @@
-* {
+body {
+	font-family: 'Work Sans', sans-serif;
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
-}
-
-body {
-	background: #ffffff;
-	color: #363639;
-	font-family: 'Work Sans', sans-serif;
-}
-
-
-
-/* ? ----- PORTADA ----- */
-.portada {
-	width: 100%;
-	background: #000000;
-
-	min-height: 100vh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-
+	background-color: #1a1a1a;
+	color: #f5f5f5;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	height: 100vh;
 	text-align: center;
-	transition: .5s ease-out all;
 }
 
-.portada.oculta {
-	transform: translateY(100%);
-}
-
-.portada .header {
-	margin-bottom: 100px;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-}
-
-.portada .header .logotipo {
-	font-size: 50px;
-	font-size: 900;
+.portada {
 	margin-bottom: 20px;
 }
 
-.portada .header .mensaje {
-	font-size: 30px;
-	font-weight: 600;
-}
-
-
-
-/* ? ----- MAIN ----- */
-main {
-	max-width: 1000px;
-	margin: auto;
-	width: 90%;
-	padding: 60px 0;
-	font-size: 18px;
-	line-height: 28px;
-	text-align: left;
-}
-
-
-
-/* ? ----- Cuenta Regresiva ----- */
-#cuenta {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 100px;
-}
-
-.simply-section {
-	background: #fff;
-	width: 180px;
-	height: 180px;
-	margin: 0 20px;
-	border-radius: 5px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.simply-amount {
-	display: block;
-	font-size: 50px;
+.header {
+	font-size: 3em;
 	font-weight: 700;
+	letter-spacing: 2px;
 }
 
-.simply-word {
-	font-weight: 300;
-	font-size: 30px;
+.countdown {
+	font-size: 2em;
+	margin-top: 70px;
+	color: white;
 }
 
-
-/* ? ---------------------------- */
+.parpadeo{
+	animation: blink 1s infinite;
+	font-size: 2em;
+	color: white;
+}
 
 @font-face {
 	font-family: 'MiFuenteDesgastada';
-	src: url('../fuentes/Take\ cover.ttf') format('woff2');
+	src: url('../fuentes/Bronx\ Bystreets\ 1.4\ ╕\ PERSONAL\ USE\ ONLY.ttf') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -113,32 +48,65 @@ main {
 	color: #ffffff;
 }
 
-.texto-desgastado-2 {
-	font-family: 'MiFuenteDesgastada', sans-serif;
-	font-size: 50px;
-	transform: rotate(-10deg);
-	color: #000000;
+@media (min-width: 330px) {
+	.texto-desgastado {
+		font-size: 30px;
+	}
 }
 
-.pequeno {
-	font-size: 20px;
+@media (min-width: 420px) {
+	.texto-desgastado {
+		font-size: 35px;
+	}
+}
+
+@media (min-width: 768px) {
+	.texto-desgastado {
+		font-size: 70px;
+	}
+}
+
+@media (min-width: 1050px) {
+	.texto-desgastado {
+		font-size: 80px;
+	}
+}
+
+
+@media (min-width: 330px) {
+	.countdown {
+		font-size: 30px;
+	}
+}
+
+@media (min-width: 420px) {
+	.countdown {
+		font-size: 35px;
+	}
+}
+
+@media (min-width: 768px) {
+	.countdown {
+		font-size: 70px;
+	}
+}
+
+@media (min-width: 1050px) {
+	.countdown {
+		font-size: 80px;
+	}
 }
 
 
 
-/* ? ----- REDES SOCIALES ----- */
-.redes-sociales .btn-red-social {
-	padding: 15px 0;
-	display: inline-block;
-	min-width: 120px;
-	border-radius: 5px;
-	background: #0c0c0c;
-	color: #fff;
-	font-size: 30px;
-	margin: 0 20px;
-	transition: .3s ease all;
-}
+@keyframes blink {
 
-.redes-sociales .btn-red-social:hover {
-	box-shadow: 0px 0px 50px 10px rgb(252, 251, 251);
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
 }

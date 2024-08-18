@@ -5,43 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destrozando mi Alma</title>
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <div class="portada" id="portada">
-        <div class="header">
-            <div class="texto-desgastado">DESTROZANDO</div>
-            <div class="texto-desgastado pequeno">MI</div>
-            <div class="texto-desgastado">ALMA</div>
-        </div>
-
-        <div id="cuenta"></div>
-
-        <div class="redes-sociales">
-            <a target="_blank" href="https://www.facebook.com/profile.php?id=61561027566086" class="btn-red-social"><i
-                    class="fab fa-facebook-f"></i></a>
-        </div>
+    <div class="portada">
+        <div class="header texto-desgastado">DESTROZANDO MI ALMA</div>
     </div>
 
-    <main class="contenedor">
-        <!-- <div class="texto-desgastado-2" style="margin-bottom: 5vh;">El Señor está cerca de los</div>
-        <div class="texto-desgastado-2" style="margin-top: 5vh;">quebrantados de corazón y salva a </div>
-        <div class="texto-desgastado-2" style="margin-top: 5vh;">los de espíritu abatido.</div>
-        <div class="texto-desgastado-2" style="margin-top: 5vh;">salva a los de espíritu abatido.</div>
-        <div class="texto-desgastado-2" style="margin-top: 5vh;">Salmos 34:18</div> -->
+    <div class="countdown" id="countdown"></div>
 
-        <h1>El Señor está cerca de los que tienen quebrantado el corazón;
-            él rescata a los de espíritu destrozado. Salmos 34:18</h1>
-    </main>
+    <script>
+        // Set the date we're counting down to
+        // var countDownDate = new Date("Oct 12, 2024 14:00:00").getTime();
+        var countDownDate = new Date("Aug 17, 2024 21:34:00").getTime();
 
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-    <script src="js/simplyCountdown.min.js"></script>
-    <script src="js/countdown.js"></script>
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "COMENZANDO.....";
+                document.getElementById("countdown").classList.add("parpadeo");
+            }
+        }, 1000);
+    </script>
 </body>
 
 </html>
